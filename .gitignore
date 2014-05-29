@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea
+
+# Python compiled & eggs
+dist
+__pycache__
+*.egg-info
+*.egg
+*.EGG
+*.EGG-INFO
+*.pyc
+*.pyo
