@@ -26,5 +26,6 @@ setup(
     ],
     install_requires=[
         'Django>=1.6',
+        'pytils>=0.3',
     ],
 )
