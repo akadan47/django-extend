@@ -1,7 +1,19 @@
 # coding: utf-8
 import os
 import datetime
+
 from django.utils.encoding import force_unicode, smart_str
+
+from pytils import translit
+
+
+def rename_by_fields(instance, filename, path, fields):
+    if fields and isinstance(fields, (list, tuple)):
+        ext = os.path.splitext(filename)[1]
+        filename = translit.translify(
+            u'_'.join([unicode(getattr(instance, field)).lower() for field in fields])
+        ) + ext
+    return u'{}{}'.format(path, filename).lower()
 
 
 def str2bool(v):
