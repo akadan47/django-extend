@@ -20,6 +20,17 @@ def str2bool(v):
     return v.lower() in ("yes", "true", "t", "1")
 
 
+def arabic_to_roman(num):
+    result = str()
+    numerals = {1: "I", 4: "IV", 5: "V", 9: "IX", 10: "X", 40: "XL",
+                50: "L", 90: "XC", 100: "C", 400: "CD", 500: "D", 900: "CM", 1000: "M"}
+    for value, numeral in sorted(numerals.items(), reverse=True):
+        while num >= value:
+            result += numeral
+            num -= value
+    return result
+
+
 def cyr2lat(text):
     result = str()
     cyr_map = {
