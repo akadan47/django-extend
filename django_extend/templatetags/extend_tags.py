@@ -36,6 +36,11 @@ def key(d, key_name):
     return d[key_name]
 
 
+@register.filter
+def index(l, index):
+    return l[index]
+
+
 def valid_numeric(arg):
     if isinstance(arg, (int, float, Decimal)):
         return arg
